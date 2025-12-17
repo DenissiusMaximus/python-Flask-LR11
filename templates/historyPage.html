@@ -1,0 +1,81 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+
+<section class="h-[60vh] flex items-center justify-center bg-black text-white">
+  <h1 class="text-5xl font-bold tracking-wide">
+    Історія Metallica
+  </h1>
+</section>
+
+<section class="min-h-screen grid grid-cols-1 md:grid-cols-2">
+
+  <div class="bg-black text-white p-10 flex flex-col justify-center gap-6">
+    <h2 class="text-3xl font-bold">
+      Початок
+    </h2>
+
+    <p class="text-lg leading-relaxed text-gray-300">
+      Metallica була заснована у 1981 році Джеймсом Хетфілдом та Ларсом Ульріхом
+      у Лос-Анджелесі. Гурт швидко став одним із головних представників
+      треш-металу, поєднавши агресію, швидкість та складні композиції.
+    </p>
+
+    <p class="text-lg leading-relaxed text-gray-300">
+      Перші альбоми сформували нове звучання важкої музики та вплинули
+      на розвиток усього жанру.
+    </p>
+  </div>
+
+  <div class="bg-white text-black p-10 flex flex-col justify-center gap-6">
+    <h2 class="text-3xl font-bold">
+      Світове визнання
+    </h2>
+
+    <p class="text-lg leading-relaxed text-gray-700">
+      З виходом альбомів <b>Master of Puppets</b> та <b>…And Justice for All</b>
+      Metallica здобула міжнародну популярність. Альбом <b>Metallica (Black Album)</b>
+      зробив гурт комерційно успішним у всьому світі.
+    </p>
+
+    <p class="text-lg leading-relaxed text-gray-700">
+      З роками гурт експериментував зі стилем, але зберіг свій унікальний характер
+      і статус легенди важкої сцени.
+    </p>
+  </div>
+
+</section>
+
+<section class="bg-gray-100 px-6 py-20">
+  <div class="max-w-5xl mx-auto flex flex-col gap-12">
+
+    <h2 class="text-4xl font-bold text-gray-900">
+      Ключові факти
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="text-2xl font-bold">1981</p>
+        <p class="text-sm text-gray-500">Рік заснування</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="text-2xl font-bold">10+</p>
+        <p class="text-sm text-gray-500">Альбомів</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="text-2xl font-bold">125M+</p>
+        <p class="text-sm text-gray-500">Продажів</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow">
+        <p class="text-2xl font-bold">Grammy</p>
+        <p class="text-sm text-gray-500">Нагороди</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

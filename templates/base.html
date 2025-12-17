@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base site</title>
+</head>
+<body>
+<div class="w-full h-[50px] fixed top-0">
+    <div class="w-full h-[50px] fixed top-0 z-50">
+        <div class="w-full h-full flex items-center justify-end gap-4 px-4 text-black bg-white">
+
+            <a href="/" class="rounded-md x-4 p-2 hover:bg-gray-100">Головна</a>
+            <a href="{{ url_for('history') }}" class="rounded-md x-4 p-2 hover:bg-gray-100">Історія гурту</a>
+            <a href="{{ url_for('about') }}" class="rounded-md x-4 p-2 hover:bg-gray-100">Про проект</a>
+
+            <div class="relative group">
+                <a href="{{ url_for('albums') }}" class="cursor-pointer">
+                    Альбоми
+                </a>
+
+                <div
+                        class="absolute right-0 mt-2 w-40 bg-white text-black shadow-lg rounded
+               opacity-0 invisible
+               group-hover:opacity-100 group-hover:visible
+               transition-all duration-200">
+                    <a class="block px-4 py-2 hover:bg-gray-100" href="#">Альбом 1</a>
+                    <a class="block px-4 py-2 hover:bg-gray-100" href="#">Альбом 2</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 bg-black">
+    {% block content %}
+    {% endblock %}
+</div>
+
+{% block scripts %}{% endblock %}
+<script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+    <div class="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
+        <section class="h-screen snap-start">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Metallica_logo.png"
+                 class="w-full h-full object-contain p-10"/>
+        </section>
+        <section class="h-auto snap-center bg-white px-6 py-20">
+            <div class="max-w-4xl mx-auto flex flex-col gap-8">
+
+                <h2 class="text-4xl font-bold text-gray-900">
+                    Про гурт
+                </h2>
+
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Metallica — американський хеві-метал гурт, заснований у 1981 році в Лос-Анджелесі.
+                    Вони є одними з піонерів треш-металу та входять до «великої четвірки» жанру разом
+                    із Slayer, Megadeth та Anthrax.
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    За роки існування Metallica продала понад 125 мільйонів альбомів по всьому світу,
+                    вплинула на кілька поколінь музикантів та стала одним із найуспішніших рок-гуртів
+                    в історії.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10">
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-gray-900">1981</p>
+                        <p class="text-sm text-gray-500">Рік заснування</p>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-gray-900">10+</p>
+                        <p class="text-sm text-gray-500">Студійних альбомів</p>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-gray-900">125M+</p>
+                        <p class="text-sm text-gray-500">Проданих копій</p>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-gray-900">Grammy</p>
+                        <p class="text-sm text-gray-500">Нагороди</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-2">
+                    <a href="{{ url_for('history') }}" class="text-4xl font-bold text-gray-900 cursor-pointer">Дізнатися більше</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
