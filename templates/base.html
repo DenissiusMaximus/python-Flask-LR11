@@ -11,26 +11,32 @@
 
             <a href="/" class="rounded-md x-4 p-2 hover:bg-gray-100">Головна</a>
             <a href="{{ url_for('history') }}" class="rounded-md x-4 p-2 hover:bg-gray-100">Історія гурту</a>
+            <a href="{{ url_for('albums') }}" class="rounded-md x-4 p-2 hover:bg-gray-100">Альбоми</a>
             <a href="{{ url_for('about') }}" class="rounded-md x-4 p-2 hover:bg-gray-100">Про проект</a>
 
-            <div class="relative group">
-                <a href="{{ url_for('albums') }}" class="cursor-pointer">
-                    Альбоми
+            {% if current_user_id %}
+                <form method="post" action="{{ url_for('logout_post') }}" class="flex flex-col items-center justify-center">
+                  <button class="rounded-md px-4 p-2 text-red-600 hover:bg-gray-100">
+                    Вийти
+                  </button>
+                </form>
+              {% else %}
+                <a href="{{ url_for('login_get') }}" class="rounded-md px-4 p-2 hover:bg-gray-100">
+                  Логін
                 </a>
-
-                <div
-                        class="absolute right-0 mt-2 w-40 bg-white text-black shadow-lg rounded
-               opacity-0 invisible
-               group-hover:opacity-100 group-hover:visible
-               transition-all duration-200">
-                    <a class="block px-4 py-2 hover:bg-gray-100" href="#">Альбом 1</a>
-                    <a class="block px-4 py-2 hover:bg-gray-100" href="#">Альбом 2</a>
-                </div>
-            </div>
-
+                <a href="{{ url_for('register_get') }}" class="rounded-md px-4 p-2 hover:bg-gray-100">
+                  Реєстрація
+                </a>
+              {% endif %}
         </div>
     </div>
 </div>
+
+{% if alert %}
+<script>
+  alert("{{ alert }}");
+</script>
+{% endif %}
 
 <div class="mt-4 bg-black">
     {% block content %}

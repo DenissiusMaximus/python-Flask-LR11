@@ -1,0 +1,61 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+    <section class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+        <div class="w-full max-w-sm bg-white p-6 rounded-lg shadow-sm">
+
+            <h1 class="text-xl font-semibold text-gray-900 mb-6 text-center">
+                Реєстрація
+            </h1>
+
+            <form
+                    action="{{ url_for('register_post') }}"
+                    method="post"
+                    class="flex flex-col gap-4">
+
+                <input
+                        type="text"
+                        name="username"
+                        placeholder="Імʼя користувача"
+                        required
+                        class="border rounded px-3 py-2 focus:outline-none focus:ring focus:ring-gray-300"
+                >
+
+                <input
+                        type="password"
+                        name="password"
+                        placeholder="Пароль"
+                        required
+                        class="border rounded px-3 py-2 focus:outline-none focus:ring focus:ring-gray-300"
+                >
+
+                <input
+                        type="password"
+                        name="password_confirm"
+                        placeholder="Підтвердіть пароль"
+                        required
+                        class="border rounded px-3 py-2 focus:outline-none focus:ring focus:ring-gray-300"
+                >
+
+                <button
+                        type="submit"
+                        class="mt-2 bg-black text-white py-2 rounded hover:bg-gray-800 transition">
+                    Зареєструватися
+                </button>
+
+            </form>
+
+            <p class="text-sm text-center text-gray-500 mt-4">
+                {{ error_messge }}
+            </p>
+
+            <p class="text-sm text-center text-gray-500 mt-4">
+                Вже є акаунт?
+                <a href="{{ url_for('login_get') }}" class="underline">
+                    Увійти
+                </a>
+            </p>
+
+        </div>
+    </section>
+{% endblock %}

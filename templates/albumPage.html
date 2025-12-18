@@ -1,0 +1,51 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+    <section class="min-h-screen bg-gray-100 px-4 py-16">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow p-8 flex flex-col gap-6">
+
+            <h1 class="text-4xl font-bold text-gray-900">
+                {{ album.name }}
+            </h1>
+
+            <p class="text-sm text-gray-500">
+                Рік випуску: {{ album.year }}
+            </p>
+
+            <p class="text-lg text-gray-700 leading-relaxed">
+                {{ album.description }}
+            </p>
+
+            <div class="pt-8 flex justify-between items-center border-t">
+
+                <a
+                        href="{{ url_for('albums') }}"
+                        class="text-sm text-gray-600 hover:underline">
+                    ← Назад до альбомів
+                </a>
+
+                <div class="flex gap-4 text-sm">
+                    <a
+                            href="{{ url_for('album_edit_get', id=album.id) }}"
+                            class="text-gray-600 hover:text-black">
+                        Редагувати
+                    </a>
+
+                    <form
+                            method="post"
+                            action="{{ url_for('album_delete', id=album.id) }}"
+                            onsubmit="return confirm('Ви точно хочете видалити цей альбом?')">
+
+                        <button
+                                type="submit"
+                                class="text-red-600 hover:underline text-sm">
+                            Видалити
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
