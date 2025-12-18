@@ -16,3 +16,13 @@ def close_db():
     db = g.pop("db", None)
     if db is not None:
         db.close()
+
+def use_db(func):
+    def wrapper(*args, **kwargs):
+        db = get_db()
+        try:
+            return func(db, *args, **kwargs)
+        finally:
+            db.close()
+    return wrapper
+

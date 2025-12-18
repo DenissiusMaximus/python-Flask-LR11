@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="min-h-screen bg-gray-100 px-6 py-16">
+  <div class="max-w-xl mx-auto bg-white rounded-lg shadow p-8">
+
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">
+      Додати новий альбом
+    </h1>
+
+    <form method="post" class="flex flex-col gap-6">
+
+      <!-- NAME -->
+      <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-gray-700">
+          Назва альбому
+        </label>
+        <input
+          type="text"
+          name="name"
+          required
+          class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+        />
+      </div>
+
+      <!-- YEAR -->
+      <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-gray-700">
+          Рік виходу
+        </label>
+        <input
+          type="number"
+          name="year"
+          required
+          class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+        />
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-gray-700">
+          Опис
+        </label>
+        <textarea
+          name="description"
+          rows="4"
+          class="border rounded-md px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-black"
+        ></textarea>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="flex justify-between items-center pt-4">
+        <a
+          href="{{ url_for('albums') }}"
+          class="text-sm text-gray-600 hover:underline"
+        >
+          ← Назад до альбомів
+        </a>
+
+        <button
+          type="submit"
+          class="px-6 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
+        >
+          Зберегти
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+{% endblock %}

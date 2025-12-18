@@ -1,13 +1,7 @@
-﻿from db import get_db
+﻿from db import get_db, use_db
 from werkzeug.security import generate_password_hash, check_password_hash
-def use_db(func):
-    def wrapper(*args, **kwargs):
-        db = get_db()
-        try:
-            return func(db, *args, **kwargs)
-        finally:
-            db.close()
-    return wrapper
+
+
 
 @use_db
 def create_user(db, username, password):

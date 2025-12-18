@@ -1,6 +1,7 @@
 ﻿from flask import Flask, render_template, jsonify, request, make_response, g
 
 from db import close_db
+from repositories.albums_repository import get_albums
 from repositories.users_repository import create_user, login_user
 from services.jwt_service import create_jwt, decode_jwt
 from utils.auth_responce import auth_response
@@ -13,8 +14,13 @@ def index():
 
 @app.route("/albums")
 def albums():
-    return render_template("albumsPage.html")
+    albums = get_albums()
 
+    return render_template("albumsPage.html", albums=albums)
+
+@app.route("/albums/add")
+def albums_add():
+    return render_template("addAlbum.html")
 
 @app.route("/history")
 def history():

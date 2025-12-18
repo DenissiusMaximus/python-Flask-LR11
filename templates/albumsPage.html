@@ -18,52 +18,9 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-lg shadow p-6 flex flex-col gap-4">
-        <h2 class="text-xl font-bold">Kill ’Em All</h2>
-        <p class="text-sm text-gray-600">1983</p>
-
-        <div class="mt-auto flex justify-between items-center">
-          <a
-             class="text-sm text-blue-600 hover:underline">
-            Переглянути
-          </a>
-
-          <div class="flex gap-2 text-sm">
-            <a
-               class="text-gray-600 hover:text-black">
-              Редагувати
-            </a>
-            <a
-               class="text-red-600 hover:underline">
-              Видалити
-            </a>
-          </div>
-        </div>
-      </div>
-
-     <div class="bg-white rounded-lg shadow p-6 flex flex-col gap-4">
-        <h2 class="text-xl font-bold">Kill ’Em All</h2>
-        <p class="text-sm text-gray-600">1983</p>
-
-        <div class="mt-auto flex justify-between items-center">
-          <a
-             class="text-sm text-blue-600 hover:underline">
-            Переглянути
-          </a>
-
-          <div class="flex gap-2 text-sm">
-            <a
-               class="text-gray-600 hover:text-black">
-              Редагувати
-            </a>
-            <a
-               class="text-red-600 hover:underline">
-              Видалити
-            </a>
-          </div>
-        </div>
-      </div>
-
+        {% for album in albums %}
+            {% include "albumCard.html" %}
+        {% endfor %}
     </div>
   </div>
 </section>
